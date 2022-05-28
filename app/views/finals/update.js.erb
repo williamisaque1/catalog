@@ -1,5 +1,10 @@
+
 $("document").ready(function() {
+
  $('#exampleModal').modal('hide')
  $('#window-modal').html('')
- $('table').load("/finals table");
+alert("<%=escape_javascript params[:id] %>")
+ $.get("/finals",(res)=>{
+ $("td[data-number=<%=escape_javascript params[:id] %>]").text($(res).find('td[data-number=<%=escape_javascript params[:id] %>]').text())
+ });
 });

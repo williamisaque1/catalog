@@ -14,7 +14,7 @@
   
     <% @finals.each do |final| %>
       <tr>
-        <td><%= final.name %></td>
+        <td data-number = <%=final.id %>><%= final.name %></td>
         <td><%= link_to 'Show', final %></td>
         <td><%= link_to 'Edit', edit_final_path(final),remote: true %></td>
         <td><%= link_to 'Destroy', final, method: :delete, data: { confirm: 'Are you sure?' } %></td>

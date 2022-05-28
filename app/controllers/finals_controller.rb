@@ -39,12 +39,8 @@ class FinalsController < ApplicationController
 
   # PATCH/PUT /finals/1 or /finals/1.json
   def update
-   
-  
-    
-      if @final.update(final_params)
-  
-       
+      if @final.update(final_params) 
+         
       else
         respond_to do |format|
         format.js { render 'edit.js'  }
