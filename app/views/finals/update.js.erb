@@ -3,8 +3,7 @@ $("document").ready(function() {
 
  $('#exampleModal').modal('hide')
  $('#window-modal').html('')
-alert("<%=escape_javascript params[:id] %>")
  $.get("/finals",(res)=>{
- $("td[data-number=<%=escape_javascript params[:id] %>]").text($(res).find('td[data-number=<%=escape_javascript params[:id] %>]').text())
+ $("td[data-number=<%=escape_javascript params[:final][:format] %>]").text($(res).find('td[data-number=<%=escape_javascript params[:final][:format] %>]').text())
  });
 });

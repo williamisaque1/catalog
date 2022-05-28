@@ -11,6 +11,7 @@
       <div class="modal-body">
       <%= form_for(@final,  url: final_path , method: :patch , local: true ,remote: true) do |form| %>
       <%= form.text_field :name %>
+        <%= form.hidden_field :format ,value: params[:format] %>
       <%= form.submit %> 
       <%end%>
       </div>

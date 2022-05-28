@@ -17,8 +17,8 @@ class FinalsController < ApplicationController
 
   # GET /finals/1/edit
   def edit
-  
-   
+    render 'edit.js' 
+
   end
 
   # POST /finals or /finals.json
