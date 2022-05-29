@@ -2,7 +2,7 @@ $("document").ready(function() {
  $('#exampleModal').modal('hide')
  $('#window-modal').html('')
 $('tr').last().after(
- ` <tr>
+ ` <tr class="col-4 ">
         <td data-number = <%= escape_javascript @final.to_s  %>>  <%=escape_javascript @final.name %> </td>
         <td><%= escape_javascript link_to 'Show',  @final  %></td>
         <td><%= escape_javascript link_to 'Edit', edit_final_path(@final),remote: true %></td>
