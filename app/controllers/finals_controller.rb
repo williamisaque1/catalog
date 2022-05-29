@@ -13,6 +13,7 @@ class FinalsController < ApplicationController
   # GET /finals/new
   def new
     @final = Final.new
+    render 'edit.js'
   end
 
   # GET /finals/1/edit
@@ -25,22 +26,18 @@ class FinalsController < ApplicationController
   def create
 
     @final = Final.new(final_params)
-
-    respond_to do |format|
-      if @final.save
-        format.html { redirect_to final_url(@final), notice: "Final was successfully created." }
-        format.json { render :show, status: :created, location: @final }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @final.errors, status: :unprocessable_entity }
-      end
+    if @final.save
+    render 'create.js'
     end
+
+    
   end
 
   # PATCH/PUT /finals/1 or /finals/1.json
   def update
+
       if @final.update(final_params) 
-         
+        
       else
         respond_to do |format|
         format.js { render 'edit.js'  }
@@ -51,8 +48,8 @@ class FinalsController < ApplicationController
 
   # DELETE /finals/1 or /finals/1.json
   def destroy
-    byebug
-    #@final.destroy
+
+    @final.destroy
 
     respond_to do |format|
       format.html { redirect_to finals_url, notice: "Final was successfully destroyed." }

@@ -9,20 +9,21 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
-  <tbody>
+<div class="container">
+  <tbody class="row " style='width:700px' >
   
-    <% @finals.each_with_index  do |final,index| %>
-      <tr>
-        <td data-number = <%= index %>><%= final.name %></td>
+    <% @finals.each do |final| %>
+      <tr class="col-4 ">
+        <td data-number = <%= final.id %>><%= final.name %></td>
         <td><%= link_to 'Show', final %></td>
-        <td><%= link_to 'Edit', edit_final_path(final, index),remote: true %></td>
+        <td><%= link_to 'Edit', edit_final_path(final),remote: true %></td>
         <td><%= link_to 'Destroy', final_path(final), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
+  </div>
 </table>
 
 <br>
 
-<%= link_to 'New Final', new_final_path %>
+<%= link_to 'New Final', new_final_path ,remote: true %>

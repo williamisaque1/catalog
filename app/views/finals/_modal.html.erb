@@ -3,16 +3,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">criando</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><%= params[:action]%></h5>
    
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-  
+    
       <div class="modal-body">
-      <%= form_for(@final,  url: "/finals/#{params[:id]}/#{params[:index]}" , method: :patch , local: true ,remote: true) do |form| %>
-   
+      <%= form_for(@final, local: true ,remote: true) do |form| %>
       <%= form.text_field :name %>
-        <%= form.hidden_field :index ,value: params[:index] %>
+      
       <%= form.submit %> 
       <%end%>
       </div>

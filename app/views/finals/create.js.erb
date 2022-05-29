@@ -1,0 +1,12 @@
+$("document").ready(function() {
+ $('#exampleModal').modal('hide')
+ $('#window-modal').html('')
+$('tr').last().after(
+ ` <tr>
+        <td data-number = <%= escape_javascript @final.to_s  %>>  <%=escape_javascript @final.name %> </td>
+        <td><%= escape_javascript link_to 'Show',  @final  %></td>
+        <td><%= escape_javascript link_to 'Edit', edit_final_path(@final),remote: true %></td>
+        <td><%= escape_javascript link_to 'Destroy', final_path(@final), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>`
+      )
+      })

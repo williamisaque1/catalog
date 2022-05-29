@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :finals ,path_names: { edit: 'edit/:index' } , only: [:index, :show,:edit,:new,:create]
-  patch '/finals/:id/:index', to: 'finals#update'
-  delete '/finals/:id/:index', to: 'finals#delete'
+  resources :finals 
   
   resources :tests
   get '/product(/:id)', to: 'products#index', as: 'productss'
