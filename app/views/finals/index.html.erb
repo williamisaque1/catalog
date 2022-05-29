@@ -17,7 +17,7 @@
         <td data-number = <%= index %>><%= final.name %></td>
         <td><%= link_to 'Show', final %></td>
         <td><%= link_to 'Edit', edit_final_path(final, index),remote: true %></td>
-        <td><%= link_to 'Destroy', final, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', final_path(final), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

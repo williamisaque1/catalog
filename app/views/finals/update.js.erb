@@ -1,9 +1,8 @@
 
 $("document").ready(function() {
-
  $('#exampleModal').modal('hide')
  $('#window-modal').html('')
  $.get("/finals",(res)=>{
- $("td[data-number=<%=escape_javascript params[:final][:format] %>]").text($(res).find('td[data-number=<%=escape_javascript params[:final][:format] %>]').text())
+ $("td[data-number=<%=escape_javascript params[:index] %>]").text($(res).find('td[data-number=<%=escape_javascript params[:index] %>]').text())
  });
 });
